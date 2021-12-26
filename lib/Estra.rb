@@ -1,4 +1,4 @@
-require_relative 'EstraAPI/info.rb'
+require_relative 'estrarb/info.rb'
 include EstraInfo
 
 BASE_URL = EstraInfo.BASE_URL
