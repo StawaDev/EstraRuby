@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
     s.date          = "2021-12-26"
     s.author        = "Stawa"
     s.summary       = "A Basic Wrapper Anime Image API Created By Stawa"
-    s.files         = ["lib/EstraAPI/info.rb", "lib/Estra.rb"]
+    s.files         = Dir['lib/**/*.rb']
     s.homepage = "https://github.com/StawaDev/EstraRuby"
     s.license     = 'MIT'
     s.require_paths = ["lib"]
