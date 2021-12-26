@@ -3,9 +3,9 @@ require 'json'
 
 module EstraInfo
     def Version
-        response = HTTParty.get(BASE_URL)
+        response = HTTParty.get("https://estra-api.herokuapp.com/")
         parse_json = JSON.parse(response.body)
-        version = parse_json["Version"].freeze
+        versions = parse_json["Version"].freeze
         return versions
     end
 
