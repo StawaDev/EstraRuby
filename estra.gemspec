@@ -1,6 +1,3 @@
-require_relative 'lib/estrarb/info.rb'
-include EstraInfo
-
 Gem::Specification.new do |s|
     s.name =        "estrarb"
     s.version       = "0.1.3"
