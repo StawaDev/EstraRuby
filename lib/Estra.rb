@@ -1,7 +1,7 @@
-require_relative 'estrarb/info.rb'
-include EstraInfo
+require_relative 'estrarb/http.rb'
+include HttpManager
 
-BASE_URL = EstraInfo.BASE_URL
+BASE_URL = HttpManager.BASE_URL
 
 module EstraRB
     class Base
@@ -210,3 +210,5 @@ module EstraRB
 
     end
 end
+
+Estra = EstraRB::Base.new

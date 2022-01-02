@@ -16,9 +16,16 @@ gem install estrarb
 ```
 
 
-## Examples
+## Simple Examples
 ```rb
-Estra = EstraRB::Base.new
+# First Example
+import 'Estra'
 
 puts Estra.headpat
+puts Estra.run
 ```
+
+## Links
+- [Documentation](https://stawa.gitbook.io/estraapi-documentation)
+- [Homepage](https://github.com/StawaDev/EstraRuby)
+- [Application Programming Interface](https://estra-api.herokuapp.com)

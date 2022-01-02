@@ -1,7 +1,7 @@
 require 'httparty'
 require 'json'
 
-module EstraInfo
+module HttpManager
     def Version
         response = HTTParty.get("https://estra-api.herokuapp.com/")
         parse_json = JSON.parse(response.body)

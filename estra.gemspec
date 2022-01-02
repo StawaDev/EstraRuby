@@ -3,8 +3,8 @@ include EstraInfo
 
 Gem::Specification.new do |s|
     s.name =        "estrarb"
-    s.version       = "0.1.2"
-    s.date          = "2021-12-26"
+    s.version       = "0.1.3"
+    s.date          = "2022-01-02"
     s.author        = "Stawa"
     s.summary       = "A Basic Wrapper Anime Image API Created By Stawa"
     s.files         = Dir['lib/**/*.rb']
