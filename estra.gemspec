@@ -1,5 +1,5 @@
 Gem::Specification.new do |s|
-    s.name =        "estrarb"
+    s.name          = "estrarb"
     s.version       = "0.1.3"
     s.date          = "2022-01-02"
     s.author        = "Stawa"
