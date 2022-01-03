@@ -5,6 +5,10 @@ BASE_URL = HttpManager.BASE_URL
 
 module EstraRB
     class Base
+        def updatereminder
+            UpdateReminder()
+        end
+
         def run
             response = HTTParty.get(BASE_URL + "sfw/run")
             if response.code == 200
@@ -212,3 +216,5 @@ module EstraRB
 end
 
 Estra = EstraRB::Base.new
+
+Estra.updatereminder

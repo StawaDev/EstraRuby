@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
     s.name          = "estrarb"
-    s.version       = "0.1.3"
-    s.date          = "2022-01-02"
+    s.version       = "0.1.4"
+    s.date          = "2022-01-03"
     s.author        = "Stawa"
     s.summary       = "A Basic Wrapper Anime Image API Created By Stawa"
     s.files         = Dir['lib/**/*.rb']
