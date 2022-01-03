@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
     s.name          = "estrarb"
-    s.version       = "0.1.4"
+    s.version       = "0.1.5"
     s.date          = "2022-01-03"
     s.author        = "Stawa"
     s.summary       = "A Basic Wrapper Anime Image API Created By Stawa"
