@@ -2,11 +2,14 @@ require_relative 'estrarb/http.rb'
 include HttpManager
 
 BASE_URL = HttpManager.BASE_URL
+Version = HttpManager.Version
 
 module EstraRB
     class Base
         def updatereminder
-            UpdateReminder()
+            if Current_Ver != Version
+                print("EstraRB Reminder: It seems EstraRB has a new version, please update this package to version #{Version}")
+            end
         end
 
         def run
