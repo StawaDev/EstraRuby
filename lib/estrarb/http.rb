@@ -11,9 +11,14 @@ module HttpManager
         return versions
     end
 
-    
     def BASE_URL
         base_url = 'https://estra-api.herokuapp.com/api/'
         return base_url
+    end
+
+    def get_api(endpoint)
+        get_response = HTTParty.get("https://estra-api.herokuapp.com/api/#{endpoint}")
+        response = JSON.parse(get_response.body)
+        return response
     end
 end

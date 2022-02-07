@@ -1,10 +1,11 @@
 require_relative 'estrarb/http.rb'
+require_relative 'estrarb/base.rb'
 include HttpManager
 
 BASE_URL = HttpManager.BASE_URL
 Version = HttpManager.Version
 
-module EstraRB
+module Client
     class Base
         def updatereminder
             if Current_Ver != Version
@@ -12,212 +13,134 @@ module EstraRB
             end
         end
 
-        def run
-            response = HTTParty.get(BASE_URL + "sfw/run")
-            if response.code == 200
-                parsed_json = JSON.parse(response.body)
-                output = parsed_json["link"]
-                return output
-            else
-                puts "It seems our API is not online for a while. Please try again later."
+        def run(generate = nil)
+            if generate
+                return produce(generate, "sfw/run", "link")
             end
+            return HttpManager.get_api("sfw/run")["link"]
         end
 
-        def hug
-            response = HTTParty.get(BASE_URL + "sfw/hug")
-            if response.code == 200
-                parsed_json = JSON.parse(response.body)
-                output = parsed_json["link"]
-                return output
-            else
-                puts "It seems our API is not online for a while. Please try again later."
+        def hug(generate = nil)
+            if generate
+                return produce(generate, "sfw/hug", "link")
             end
+            return HttpManager.get_api("sfw/hug")["link"]
         end
 
-        def smile
-            response = HTTParty.get(BASE_URL + "sfw/smile")
-            if response.code == 200
-                parsed_json = JSON.parse(response.body)
-                output = parsed_json["link"]
-                return output
-            else
-                puts "It seems our API is not online for a while. Please try again later."
+        def smile(generate = nil)
+            if generate
+                return produce(generate, "sfw/smile", "link")
             end
+            return HttpManager.get_api("sfw/smile")["link"]
         end
 
-        def neko
-            response = HTTParty.get(BASE_URL + "sfw/neko")
-            if response.code == 200
-                parsed_json = JSON.parse(response.body)
-                output = parsed_json["link"]
-                return output
-            else
-                puts "It seems our API is not online for a while. Please try again later."
+        def neko(generate = nil)
+            if generate
+                return produce(generate, "sfw/neko", "link")
             end
+            return HttpManager.get_api("sfw/neko")["link"]
         end
     
 
-        def poke
-            response = HTTParty.get(BASE_URL + "sfw/poke")
-            if response.code == 200
-                parsed_json = JSON.parse(response.body)
-                output = parsed_json["link"]
-                return output
-            else
-                puts "It seems our API is not online for a while. Please try again later."
+        def poke(generate = nil)
+            if generate
+                return produce(generate, "sfw/poke", "link")
             end
+            return HttpManager.get_api("sfw/poke")["link"]
         end
     
 
-        def bite
-            response = HTTParty.get(BASE_URL + "sfw/bite")
-            if response.code == 200
-                parsed_json = JSON.parse(response.body)
-                output = parsed_json["link"]
-                return output
-            else
-                puts "It seems our API is not online for a while. Please try again later."
+        def bite(generate = nil)
+            if generate
+                return produce(generate, "sfw/bite", "link")
             end
+            return HttpManager.get_api("sfw/bite")["link"]
         end
     
 
-        def slap
-            response = HTTParty.get(BASE_URL + "sfw/slap")
-            if response.code == 200
-                parsed_json = JSON.parse(response.body)
-                output = parsed_json["link"]
-                return output
-            else
-                puts "It seems our API is not online for a while. Please try again later."
+        def slap(generate = nil)
+            if generate
+                return produce(generate, "sfw/slap", "link")
             end
+            return HttpManager.get_api("sfw/slap")["link"]
         end
     
 
-        def highfive
-            response = HTTParty.get(BASE_URL + "sfw/highfive")
-            if response.code == 200
-                parsed_json = JSON.parse(response.body)
-                output = parsed_json["link"]
-                return output
-            else
-                puts "It seems our API is not online for a while. Please try again later."
+        def highfive(generate = nil)
+            if generate
+                return produce(generate, "sfw/highfive", "link")
             end
+            return HttpManager.get_api("sfw/highfive")["link"]
         end
     
 
-        def headpat
-            response = HTTParty.get(BASE_URL + "sfw/headpat")
-            if response.code == 200
-                parsed_json = JSON.parse(response.body)
-                output = parsed_json["link"]
-                return output
-            else
-                puts "It seems our API is not online for a while. Please try again later."
+        def headpat(generate = nil)
+            if generate
+                return produce(generate, "sfw/headpat", "link")
             end
+            return HttpManager.get_api("sfw/headpat")["link"]
         end
 
-        def kill
-            response = HTTParty.get(BASE_URL + "nsfw/kill")
-            if response.code == 200
-                parsed_json = JSON.parse(response.body)
-                output = parsed_json["link"]
-                return output
-            else
-                puts "It seems our API is not online for a while. Please try again later."
+        def kill(generate = nil)
+            if generate
+                return produce(generate, "nsfw/kill", "link")
             end
+            return HttpManager.get_api("nsfw/kill")["link"]
         end
 
-        def yuri
-            response = HTTParty.get(BASE_URL + "nsfw/yuri")
-            if response.code == 200
-                parsed_json = JSON.parse(response.body)
-                output = parsed_json["link"]
-                return output
-            else
-                puts "It seems our API is not online for a while. Please try again later."
+        def yuri(generate = nil)
+            if generate
+                return produce(generate, "nsfw/kill", "link")
             end
+            return HttpManager.get_api("nsfw/kill")["link"]
         end
 
-        def yaoi
-            response = HTTParty.get(BASE_URL + "nsfw/yaoi")
-            if response.code == 200
-                parsed_json = JSON.parse(response.body)
-                output = parsed_json["link"]
-                return output
-            else
-                puts "It seems our API is not online for a while. Please try again later."
+        def yaoi(generate = nil)
+            if generate
+                return produce(generate, "nsfw/kill", "link")
             end
+            return HttpManager.get_api("nsfw/kill")["link"]
         end
 
-        def waifu
-            response = HTTParty.get(BASE_URL + "anigames/waifu")
-            if response.code == 200
-                parsed_json = JSON.parse(response.body)
-                output = parsed_json["link"]
-                return output
-            else
-                puts "It seems our API is not online for a while. Please try again later."
-            end
+        def waifu(generate = nil)
+            return HttpManager.get_api("anigames/waifu")
         end
 
-        def husbando
-            response = HTTParty.get(BASE_URL + "anigames/husbando")
-            if response.code == 200
-                parsed_json = JSON.parse(response.body)
-                output = parsed_json["link"]
-                return output
-            else
-                puts "It seems our API is not online for a while. Please try again later."
-            end
+        def husbando(generate = nil)
+            return HttpManager.get_api("anigames/husbando")
         end
 
-        def anitruth
-            response = HTTParty.get(BASE_URL + "anigames/truth")
-            if response.code == 200
-                parsed_json = JSON.parse(response.body)
-                output = parsed_json["text"]
-                return output
-            else
-                puts "It seems our API is not online for a while. Please try again later."
+        def anitruth(generate = nil)
+            if generate
+                return produce(generate, "anigames/truth", "text")
             end
+            return HttpManager.get_api("anigames/truth")["text"]
         end
 
-        def anidare
-            response = HTTParty.get(BASE_URL + "anigames/dare")
-            if response.code == 200
-                parsed_json = JSON.parse(response.body)
-                output = parsed_json["text"]
-                return output
-            else
-                puts "It seems our API is not online for a while. Please try again later."
+        def anidare(generate = nil)
+            if generate
+                return produce(generate, "anigames/dare", "text")
             end
+            return HttpManager.get_api("anigames/dare")["text"]
         end
 
-        def truth
-            response = HTTParty.get(BASE_URL + "games/truth")
-            if response.code == 200
-                parsed_json = JSON.parse(response.body)
-                output = parsed_json["text"]
-                return output
-            else
-                puts "It seems our API is not online for a while. Please try again later."
+        def truth(generate = nil)
+            if generate
+                return produce(generate, "games/truth", "text")
             end
+            return HttpManager.get_api("games/truth")["text"]
         end
 
-        def dare
-            response = HTTParty.get(BASE_URL + "games/dare")
-            if response.code == 200
-                parsed_json = JSON.parse(response.body)
-                output = parsed_json["text"]
-                return output
-            else
-                puts "It seems our API is not online for a while. Please try again later."
+        def dare(generate = nil)
+            if generate
+                return produce(generate, "games/dare", "text")
             end
+            return HttpManager.get_api("games/dare")["text"]
         end
 
     end
 end
 
-Estra = EstraRB::Base.new
+Estra = Client::Base.new
 
-Estra.updatereminder
+puts Estra.run(2)
