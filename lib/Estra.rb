@@ -2,14 +2,22 @@ require_relative 'estrarb/http.rb'
 require_relative 'estrarb/base.rb'
 include HttpManager
 
-BASE_URL = HttpManager.BASE_URL
-Version = HttpManager.Version
+Version = HttpManager.version
 
 module Client
     class Base
-        def updatereminder
-            if Current_Ver != Version
-                print("EstraRB Reminder: It seems EstraRB has a new version, please update this package to version #{Version}")
+        def reminderUpdate
+            civ = '0.1.5'
+            if civ != Version
+                puts "EstraRuby: It seems you got an older version of EstraRuby. Current stable version #{Version}"
+            end
+        end
+
+        def autoUpdate
+            civ = '0.1.5'
+            if civ != Version
+                puts "EstraRuby: It seems you got an older version of EstraRuby. We will gonna update it to latest stable version, #{Version}"
+                exec('gem install estrarb')
             end
         end
 
@@ -110,6 +118,14 @@ module Client
             return HttpManager.get_api("anigames/husbando")
         end
 
+        def shipper_waifu(player)
+            return HttpManager.get_api("anigames/shipper/waifu/?player=#{player}")
+        end
+
+        def shipper_husbando(player)
+            return HttpManager.get_api("anigames/shipper/husbando/?player=#{player}")
+        end
+
         def anitruth(generate = nil)
             if generate
                 return produce(generate, "anigames/truth", "text")
@@ -142,5 +158,3 @@ module Client
 end
 
 Estra = Client::Base.new
-
-puts Estra.run(2)
